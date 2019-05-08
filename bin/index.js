@@ -1,5 +1,8 @@
+const cors = require('cors')
 const express = require('express')
 const app = express()
+
+app.use(cors())
 
 app.get('/', function (req, res) {
   return res.status(200).json({data: 'health check ok'})
