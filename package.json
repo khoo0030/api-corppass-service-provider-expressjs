@@ -1,0 +1,11 @@
+{
+  "name": "api-corppass-service-provider-expressjs",
+  "version": "1.0.0",
+  "description": "Sample CorpPass Service Provider API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gerald Khoo",
+  "license": "ISC"
+}
