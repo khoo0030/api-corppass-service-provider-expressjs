@@ -16,16 +16,16 @@ app.use(function (req, res, next) {
 app.use(routes)
 
 app.use(function (req, res, next) {
-  return next(res.status(httpStatus.NOT_FOUND).json('Route not found'));
-});
+  return next(res.status(httpStatus.NOT_FOUND).json('Route not found'))
+})
 
-app.use(function (err, req, res, next) {
-  loggingService.error(err.stack);
-  res.status(err.status || 500);
+app.use(function (err, req, res) {
+  loggingService.error(err.stack)
+  res.status(err.status || 500)
   return res.jsonp({
     status: err.status || 500,
     message: err.message,
-  });
-});
+  })
+})
 
-module.exports = app;
+module.exports = app
