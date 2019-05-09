@@ -6,18 +6,7 @@ const loggingService = require('./../services/loggingService')
 const NODE_ENV = config.env('NODE_ENV', 'development')
 let PORT;
 
-if (NODE_ENV === 'testing') {
-  PORT = 7999
-} else {
-  PORT = config.get('app.port', 7002)
-}
-
-// const port = config.get('app.port', 7002)
-// const server = app.listen(port, function (err) {
-//   if (err) console.error(err)
-//   console.log(`listening on port ${port}!`)
-// })
-// module.exports = server;
+NODE_ENV === 'testing' ? PORT = 7999 : PORT = config.get('app.port', 7002)
 
 const server = http.createServer(app);
 server.listen(PORT);
