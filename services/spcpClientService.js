@@ -1,5 +1,5 @@
-const config = require('./../config/index');
-const SPCPAuthClient = require('@opengovsg/spcp-auth-client');
+const config = require('./../config/index')
+const SPCPAuthClient = require('@opengovsg/spcp-auth-client')
 
 module.exports = new SPCPAuthClient({
   partnerEntityId: config.env('PARTNER_ENTITY_ID', config.get('corpPass.partnerEntityId')),
@@ -10,4 +10,4 @@ module.exports = new SPCPAuthClient({
   appKey: config.env('APP_KEY', config.get('corpPass.appKey')),
   spcpCert: config.env('SPCP_CERT', config.get('corpPass.spcpCert')),
   extract: config.env('EXTRACT', config.get('corpPass.extract')),
-});
+})

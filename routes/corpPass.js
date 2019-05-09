@@ -26,6 +26,6 @@ router.get('/assert-saml', (req, res) => {
     }
     res.redirect(relayState)
   })
-});
+})
 
 module.exports = router
