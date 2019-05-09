@@ -22,7 +22,7 @@ router.get('/assert-saml', (req, res) => {
       loggingService.error(stringify(err))
     } else {
 
-      res.cookie('GERALD_KHOO_COOKIE', 'lalala')
+      res.cookie('GERALD_KHOO_COOKIE', attributes)
     }
     res.redirect(relayState)
   })
