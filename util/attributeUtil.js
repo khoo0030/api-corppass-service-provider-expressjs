@@ -19,4 +19,10 @@ module.exports = {
     const userInfoNode = xpath.select('//UserInfo', doc)[0].toString()
     return convert.xml2js(userInfoNode, {compact: true})
   },
+
+  getAuthAccess: function (attributes) {
+    const doc = new dom().parseFromString(this.getRawAttributes(attributes))
+    const authAccessNode = xpath.select('//AuthAccess', doc)[0].toString()
+    return convert.xml2js(authAccessNode, {compact: true})
+  },
 }
