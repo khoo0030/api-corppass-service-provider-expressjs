@@ -79,7 +79,7 @@ CorpPass Service Provider is running on http://localhost:7002
 
 ## How to use
 
-- Go to [Web Client](https://github.com/khoo0030/client-corppass-playplay-vuejs). Landing page should load.
+- Go to Web Client @ http://localhost:7000. Landing page should load.
 - @Web Client landing page - click on `Go to MockPass` button. MockPass login page should load.
 - @MockPass login page - click on the `Login` button then click on `select username` and click on `[Object object]` selection. Home page should load indicating that MockPass authentication is successful.
 
