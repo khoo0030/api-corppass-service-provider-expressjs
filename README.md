@@ -93,15 +93,18 @@ CorpPass Service Provider is running on http://localhost:7002
 
 Node | config.js | What is it?
 ------------ | ------------- | -------------
-PARTNER_ENTITY_ID | partnerEntityId | CorpPass SAML assert url for soap. Use NULL
-IDP_LOGIN_URL | idpLoginURL | CorpPass login url. For MockPass: http://localhost:5156/corppass/logininitial
-IDP_ENDPOINT | idpEndpoint | CorpPass SAML assert url: For MockPass: http://localhost:5156/corppass/soap
-ESRVC_ID | esrvcID | CorpPass E-Service ID: For MockPass: use anything you like
-APP_CERT | appCert | Service Provider generated certificate. For MockPass: use `\static\certs\server.crt` in MockPass repository 
-APP_KEY | appKey | Service Provider private key. For MockPass: use `\static\certs\key.pem` in MockPass repository
-SPCP_CERT | spcpCert | For MockPass: use `\static\certs\spcp.crt` in MockPass repository
-EXTRACT | extract | Custom function to extract attributes. Can be empty
-TARGET_URL | targetURL | Web Client url to redirect to after SAML assertion. Use http://localhost:7000/home
+PARTNER_ENTITY_ID | `corppass.partnerEntityId` | CorpPass SAML assert url for soap. Use NULL
+IDP_LOGIN_URL | `corppass.idpLoginURL` | CorpPass login url. For MockPass: http://localhost:5156/corppass/logininitial
+IDP_ENDPOINT | `corppass.idpEndpoint` | CorpPass SAML assert url: For MockPass: http://localhost:5156/corppass/soap
+ESRVC_ID | `corppass.esrvcID` | CorpPass E-Service ID: For MockPass: use anything you like
+APP_CERT | `corppass.appCert` | Service Provider generated certificate. For MockPass: use `\static\certs\server.crt` in MockPass repository 
+APP_KEY | `corppass.appKey` | Service Provider private key. For MockPass: use `\static\certs\key.pem` in MockPass repository
+SPCP_CERT | `corppass.spcpCert` | For MockPass: use `\static\certs\spcp.crt` in MockPass repository
+EXTRACT | `corppass.extract` | Custom function to extract attributes. Can be empty
+TARGET_URL | `corppass.targetURL` | Web Client url to redirect to after SAML assertion. Use http://localhost:7000/home
+NODE_ENV | `app.env` | App environment. Default 'development'
+PORT | `app.port` | App port. Default 7002
+LOGGING_LEVEL | `app.logging.level` | Log start level. Default 'debug'
 
 ### Routes
 Route Path | What is it?
@@ -119,7 +122,7 @@ An attributes object with key value is returned after SAML assertion. Key is the
 ```
 
 ### XML document
-Sample of the XML document, refer to Section 4.4.3 of the CorpPass Interface Specification v1.5
+Sample of the XML document after decoding the base64-encoded attribute, refer to Section 4.4.3 of the CorpPass Interface Specification v1.5
 ```
 <UserInfo>
   <CPUID>S8979373D</CPUID>
