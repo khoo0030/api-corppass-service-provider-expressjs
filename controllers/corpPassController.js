@@ -1,4 +1,3 @@
-const { stringify } = require('flatted')
 const _ = require('lodash')
 const attributeUtil = require('./../util/attributeUtil')
 const config = require('./../config/index')
@@ -13,21 +12,14 @@ module.exports = {
     res.redirect(redirectURL)
   },
   assertSaml: function (req, res) {
-    console.log('assert saml function called')
-    console.log(req.query)
-
     const { SAMLart: samlArt, RelayState: relayState } = req.query
 
     spcpClientService.getAttributes(samlArt, relayState, (err, data) => {
-      console.log('spcp function called')
-
       const { attributes, relayState } = data
 
       if (err) {
-        console.log(err)
-        loggingService.error(stringify(err))
+        loggingService.error(err.stack)
       } else {
-        console.log(data)
         // OK. No errors resolving saml assertion.
         // MockPass returns a base64 encoded attributes object. Use the helpful attributeUtil to get the userInfo object
         // and authAccess object. Refer to test case to see what the 2 objects look like.
