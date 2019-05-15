@@ -10,7 +10,7 @@ module.exports = {
     const targetURL = config.env('TARGET_URL', config.get('corpPass.targetURL'))
     const esrvcID = config.env('ESRVC_ID', config.get('corpPass.esrvcID'))
     const redirectURL = spcpClientService.createRedirectURL(targetURL, esrvcID)
-    return res.redirect(redirectURL)
+    res.redirect(redirectURL)
   },
   assertSaml: function (req, res) {
     console.log('assert saml function called')
@@ -41,7 +41,7 @@ module.exports = {
         res.cookie('CPEntID', _.get(userInfo, 'UserInfo.CPEntID._text'))
       }
 
-      return res.redirect(relayState)
+      res.redirect(relayState)
     })
   },
 }
