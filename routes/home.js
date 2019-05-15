@@ -1,9 +1,7 @@
 const express = require('express')
-const httpStatus = require('http-status-codes')
 const router = express.Router()
+const { index } = require('./../controllers/homeController')
 
-router.get('/', function (req, res) {
-  return res.status(httpStatus.OK).json({data: 'health check ok'})
-})
+router.get('/', index)
 
 module.exports = router

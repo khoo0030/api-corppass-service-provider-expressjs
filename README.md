@@ -8,6 +8,7 @@
 - [Sequence Diagram](#sequence-diagram)
 - [Project Specifications](#project-specifications)
     - [Environment variables](#environment-variables)
+    - [Routes](#routes)
     - [Attributes](#attributes)
     - [XML document](#xml-document)
 - [Acknowledgements](#acknowledgements)
@@ -102,6 +103,13 @@ SPCP_CERT | spcpCert | For MockPass: use `\static\certs\spcp.crt` in MockPass re
 EXTRACT | extract | Custom function to extract attributes. Can be empty
 TARGET_URL | targetURL | Web Client url to redirect to after SAML assertion. Use http://localhost:7000/home
 
+### Routes
+Route Path | What is it?
+------------ | -------------
+/ | Health check endpoint. Returns 200 with message
+/corppass-login | Returns 302 redirect to CorpPass login 
+/assert-saml | Returns 302 redirect to Web Client /home route. Returns data as cookies
+
 ### Attributes
 An attributes object with key value is returned after SAML assertion. Key is the UEN and value is base64 encoded payload of the XML document
 ```
@@ -137,4 +145,4 @@ Sample of the XML document, refer to Section 4.4.3 of the CorpPass Interface Spe
 ```
 
 ## Acknowledgements
-Special thanks to the folks at GovTech for creating [@opengovsg/spcp-auth-client](https://www.npmjs.com/package/@opengovsg/spcp-auth-client)
+Special thanks to the folks at GovTech for creating [@opengovsg/spcp-auth-client](https://www.npmjs.com/package/@opengovsg/spcp-auth-client) and [@opengovsg/mockpass](https://github.com/opengovsg/mockpass)
