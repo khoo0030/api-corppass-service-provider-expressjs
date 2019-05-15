@@ -1,5 +1,6 @@
 module.exports = {
   app: {
+    env: 'development',
     port: 7002,
     logging: {
       level: 'debug',
