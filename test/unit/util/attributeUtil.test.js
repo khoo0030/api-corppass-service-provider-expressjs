@@ -1,4 +1,4 @@
-const attributeUtil = require('./../../util/attributeUtil')
+const attributeUtil = require('../../../util/attributeUtil')
 const expect = require('chai').expect
 
 const attributes = {

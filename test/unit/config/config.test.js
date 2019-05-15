@@ -1,4 +1,4 @@
-const config = require('./../../config/index')
+const config = require('../../../config')
 const expect = require('chai').expect
 
 describe('config', function () {
