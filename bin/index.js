@@ -3,17 +3,6 @@ const config = require('./../config/index')
 const http = require('http')
 const loggingService = require('./../services/loggingService')
 
-const message = {
-  data: 'heelo',
-  field: [
-    'aaa',
-    'bbb'
-  ]
-}
-
-loggingService.error('Error', message)
-loggingService.error(message)
-
 const NODE_ENV = config.env('NODE_ENV', config.get('app.env', 'development'))
 let PORT
 
